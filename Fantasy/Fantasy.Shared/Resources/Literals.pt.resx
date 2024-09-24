@@ -171,4 +171,16 @@
   <data name="Create" xml:space="preserve">
     <value>Criar</value>
   </data>
+  <data name="SaveChanges" xml:space="preserve">
+    <value>Guardar alterações</value>
+  </data>
+  <data name="Return" xml:space="preserve">
+    <value>Sair</value>
+  </data>
+  <data name="RecordSaveOk" xml:space="preserve">
+    <value>Registo guardado com secesso</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
 </root>
