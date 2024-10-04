@@ -183,4 +183,13 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="ERR001" xml:space="preserve">
+    <value>Registo não encontrado</value>
+  </data>
+  <data name="ERR003" xml:space="preserve">
+    <value>O registo já existe</value>
+  </data>
+  <data name="ERR002" xml:space="preserve">
+    <value>Não pode ser eliminado porque tem registos relacionados</value>
+  </data>
 </root>
