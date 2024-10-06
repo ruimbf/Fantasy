@@ -20,7 +20,7 @@ public class SeedDb
         await CheckTeamsAsync();
     }
 
-    private async Task CheckTeamsAsync()
+    private async Task CheckCountriesAsync()
     {
         if (!_context.Countries.Any())
         {
@@ -36,13 +36,13 @@ public class SeedDb
         }
     }
 
-    private async Task CheckCountriesAsync()
+    private async Task CheckTeamsAsync()
     {
         if (!_context.Teams.Any())
         {
             foreach (var country in _context.Countries)
             {
-                _context.Teams.Add(new Team { Name = country.Name, Country = country! });
+                //_context.Teams.Add(new Team { Name = country.Name, Country = country! });
                 if (country.Name == "Portugal")
                 {
                     _context.Teams.Add(new Team { Name = "SL Benfica", Country = country! });
