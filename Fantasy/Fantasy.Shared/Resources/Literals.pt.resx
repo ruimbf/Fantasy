@@ -201,4 +201,10 @@
   <data name="RequiredField" xml:space="preserve">
     <value>O campo {0} é obrigatório</value>
   </data>
+  <data name="ERR005" xml:space="preserve">
+    <value>O Id da equipa não é válido</value>
+  </data>
+  <data name="ERR004" xml:space="preserve">
+    <value>O id do país não é válido</value>
+  </data>
 </root>
