@@ -1,4 +1,5 @@
 ﻿using Fantasy.Backend.Data;
+using Fantasy.Backend.Helpers;
 using Fantasy.Backend.UnitsOfWork.Interfaces;
 using Fantasy.Shared.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -11,15 +12,20 @@ namespace Fantasy.Backend.Controllers;
 public class CountriesController : GenericController<Country>
 {
     private readonly ICountriesUnitOfWork _countriesUnitOfWork;
+    private readonly IFileStorage _fileStorage;
 
-    public CountriesController(IGenericUnitOfWork<Country> unitOfWork, ICountriesUnitOfWork countriesUnitOfWork) : base(unitOfWork)
+    public CountriesController(IGenericUnitOfWork<Country> unitOfWork, ICountriesUnitOfWork countriesUnitOfWork, IFileStorage fileStorage) : base(unitOfWork)
     {
         _countriesUnitOfWork = countriesUnitOfWork;
+        _fileStorage = fileStorage;
     }
 
     [HttpGet]
     public override async Task<IActionResult> GetAsync()
     {
+        var s = await _fileStorage.SaveFileAsync(new byte[] { 0, 1, 2, 3 }, ".jpg", "teams");
+        await _fileStorage.RemoveFileAsync(s, "teams");
+
         var response = await _countriesUnitOfWork.GetAsync();
         if (response.WasSuccess)
         {

@@ -1,4 +1,5 @@
 using Fantasy.Backend.Data;
+using Fantasy.Backend.Helpers;
 using Fantasy.Backend.Repositories.Implementations;
 using Fantasy.Backend.Repositories.Interfaces;
 using Fantasy.Backend.UnitsOfWork.Implementations;
@@ -20,6 +21,7 @@ builder.Services.AddSwaggerGen();
 //new
 builder.Services.AddDbContext<DataContext>(x => x.UseSqlServer("name=LocalConnection"));
 builder.Services.AddTransient<SeedDb>();
+builder.Services.AddScoped<IFileStorage, FileStorage>();
 
 builder.Services.AddScoped(typeof(IGenericUnitOfWork<>), typeof(GenericUnitOfWork<>));
 builder.Services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
