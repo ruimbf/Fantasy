@@ -207,4 +207,7 @@
   <data name="ERR004" xml:space="preserve">
     <value>O id do país não é válido</value>
   </data>
+  <data name="Teams" xml:space="preserve">
+    <value>Equipas</value>
+  </data>
 </root>
